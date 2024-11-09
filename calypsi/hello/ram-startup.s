@@ -38,8 +38,10 @@
               .section code, noreorder
 #endif
               .pubweak __program_start
+              .pubweak __program_root_section
 __program_start:
-              clc
+__program_root_section:
+	      clc
               xce                   ; native 16-bit mode
               rep     #0x38         ; 16-bit registers, no decimal mode
               ldx     ##.sectionEnd stack
